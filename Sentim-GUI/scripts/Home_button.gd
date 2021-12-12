@@ -3,6 +3,7 @@ extends Control
 export(StreamTexture) var icon
 export var label = "Home"
 export var active = false
+export(NodePath) var page
 
 func _ready():
 	$Home.texture = icon
@@ -19,11 +20,16 @@ func deactive():
 	
 func update_elements():
 	$active.visible = active
+	get_node(page).visible = active
+	if active:
+		$homeBG.color = "#1e1f99"
+	else:
+		$homeBG.color = "#272143"
 		
 func _on_Home_button_mouse_entered():
-	$homeBG.color = "#1e1f59"
+	$homeBG.color = "#384fb0"
 func _on_Home_button_mouse_exited():
-	$homeBG.color = "#272143"
+	update_elements()
 
 	
 
