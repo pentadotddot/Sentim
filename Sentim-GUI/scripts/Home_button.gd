@@ -31,7 +31,6 @@ func _on_Home_button_mouse_entered():
 func _on_Home_button_mouse_exited():
 	update_elements()
 
-	
 
 func _on_Home_button_gui_input(event):
 	if event is InputEventMouseButton:

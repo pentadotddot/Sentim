@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/action_buttons.gd" type="Script" id=1]
+[ext_resource path="res://fonts/AquireLight-YzE0o.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[node name="Login_action_button" type="Control" groups=["Home", "Homeitems"]]
+anchor_right = 0.116
+anchor_bottom = 0.091
+margin_right = -0.200005
+margin_bottom = -0.0500031
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actionBG" type="ColorRect" parent="."]
+anchor_left = 0.061
+anchor_top = 0.088
+anchor_right = 0.939
+anchor_bottom = 0.912
+margin_left = 0.058372
+margin_top = -0.0254021
+margin_right = -0.0583878
+margin_bottom = 0.0253983
+mouse_filter = 2
+theme = SubResource( 6 )
+color = Color( 0.137255, 0.196078, 0.564706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="active" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 5.0
+margin_right = -93.584
+margin_bottom = -32.55
+mouse_filter = 2
+color = Color( 1, 0, 0.211765, 0.776471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.292
+margin_top = -22.275
+margin_right = 51.708
+margin_bottom = 22.725
+custom_colors/font_color = Color( 0.992157, 1, 0.0196078, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Login"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="." to="." method="_on_Login_action_button_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_Login_action_button_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Login_action_button_mouse_exited"]
