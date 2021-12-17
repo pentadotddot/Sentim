@@ -21,9 +21,12 @@ client_id = r'919888876703744030' # Get from https://discordapp.com/developers/a
 client_secret = "LHlWFz0zpxEyImfxk5xHTKvnswVDthEq"
 redirect_uri='http://localhost:5000/oauth_callback'
 local_uri = "http://localhost:5000/"
-scope = ['identify', 'guilds']
+scope = ['identify', 'guilds','bot']
 token_url = 'https://discordapp.com/api/oauth2/token'
 authorize_url = 'https://discordapp.com/api/oauth2/authorize'
+bot_invite_permission_ID = "141466397760"
+bot_invite_URL = "https://discord.com/api/oauth2/authorize?client_id=919888876703744030&permissions="+str(bot_invite_permission_ID)+"&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Foauth_callback&response_type=code&scope=bot" 
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -63,8 +66,11 @@ def oauth_callback():
 	response = discord.get(base_discord_api_url + '/users/@me')
 	response_guilds = discord.get(base_discord_api_url + '/users/@me/guilds')
 	# https://discordapp.com/developers/docs/resources/user#user-object-user-structure
-	
+
 	with open(save_user_data_path+"UserData.json", "w") as outfile:
+		json.dump(response.json(), outfile)
+	
+	with open(save_user_data_path+"UserGuildsData.json", "w") as outfile:
 		json.dump(response_guilds.json(), outfile)
 
 	#return 'Thanks for granting us authorization! You can now close this windows: '
