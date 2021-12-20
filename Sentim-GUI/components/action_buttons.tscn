@@ -35,16 +35,15 @@ __meta__ = {
 }
 
 [node name="active" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 5.0
-margin_right = -93.584
-margin_bottom = -32.55
+anchor_left = 0.0590299
+anchor_top = 0.091659
+anchor_right = 0.17709
+anchor_bottom = 0.311641
+rect_clip_content = true
 mouse_filter = 2
 color = Color( 1, 0, 0.211765, 0.776471 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Label" type="Label" parent="."]
