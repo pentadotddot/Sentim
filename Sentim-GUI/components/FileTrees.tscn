@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/ServerTree_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://components/FileTrees.gd" type="Script" id=2]
 [ext_resource path="res://icons/tick_box_tick.png" type="Texture" id=3]
 
@@ -52,8 +52,10 @@ margin_bottom = -176.38
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0.0784314, 0.0745098, 0.890196, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.662745, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.423529, 0.988235, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Discord Server/Channel Tree"
+text = "Discord Server and Channel Tree"
 align = 1
 autowrap = true
 __meta__ = {
@@ -65,6 +67,7 @@ margin_left = 13.0
 margin_top = 29.0
 margin_right = 221.0
 margin_bottom = 187.0
+rect_clip_content = false
 custom_icons/checked = ExtResource( 3 )
 columns = 2
 hide_root = true

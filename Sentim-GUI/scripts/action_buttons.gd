@@ -29,6 +29,7 @@ func update_elements():
 		if $Label.text == "List Servers":
 			OS.execute("python",['C:/Users/Zsetszko21/Documents/Sentim-GUI/python/DiscordLogin/Sentim_BOT.py'],true)
 			bot = false
+			get_tree().reload_current_scene()
 
 	else:
 		$actionBG.color = "#272143"

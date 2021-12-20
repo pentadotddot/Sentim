@@ -11,7 +11,7 @@
 [ext_resource path="res://icons/Learn.png" type="Texture" id=9]
 [ext_resource path="res://icons/home.svg" type="Texture" id=10]
 [ext_resource path="res://icons/addons.svg" type="Texture" id=11]
-[ext_resource path="res://resources/main_font.tres" type="DynamicFont" id=12]
+[ext_resource path="res://resources/header_font.tres" type="DynamicFont" id=12]
 [ext_resource path="res://components/action_buttons.tscn" type="PackedScene" id=13]
 [ext_resource path="res://components/FileTrees.tscn" type="PackedScene" id=14]
 
