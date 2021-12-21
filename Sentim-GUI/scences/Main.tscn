@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://icons/side-menu.png" type="Texture" id=1]
 [ext_resource path="res://scripts/ToggleButton.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://resources/header_font.tres" type="DynamicFont" id=12]
 [ext_resource path="res://components/action_buttons.tscn" type="PackedScene" id=13]
 [ext_resource path="res://components/FileTrees.tscn" type="PackedScene" id=14]
+[ext_resource path="res://components/FileTreesView.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Theme" id=1]
 
@@ -255,24 +256,37 @@ __meta__ = {
 }
 
 [node name="ServersChannelsTree" parent="HBoxContainer/Body/pages/ManageServers/ServersChannelsPanel" instance=ExtResource( 14 )]
-anchor_left = 0.0206098
+anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0734553
-anchor_bottom = 0.0
-margin_left = 0.929999
-margin_top = -4.0
-margin_right = 217.93
-margin_bottom = 181.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.00032
+margin_bottom = -0.000228882
 
-[node name="Python_action_button" parent="HBoxContainer/Body/pages/ManageServers" instance=ExtResource( 13 )]
+[node name="Python_action_button" parent="HBoxContainer/Body/pages/ManageServers/ServersChannelsPanel" instance=ExtResource( 13 )]
 anchor_left = 0.135
 anchor_right = 0.135
 anchor_bottom = 0.0
-margin_left = 39.75
-margin_top = 209.0
-margin_right = 140.75
-margin_bottom = 247.0
+margin_left = 105.79
+margin_top = 184.0
+margin_right = 206.79
+margin_bottom = 222.0
 label = "List Servers"
+
+[node name="ServersChannelsPanelVIEW" type="Panel" parent="HBoxContainer/Body/pages/ManageServers"]
+anchor_left = 0.294737
+anchor_top = 0.0454545
+anchor_right = 0.554737
+anchor_bottom = 0.456364
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ServersChannelsTreeView" parent="HBoxContainer/Body/pages/ManageServers/ServersChannelsPanelVIEW" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Addons" type="Control" parent="HBoxContainer/Body/pages"]
 visible = false
@@ -317,5 +331,5 @@ anims/sidebar_slide_anim = SubResource( 4 )
 [connection signal="gui_input" from="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" to="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" method="_on_ToggleButton_gui_input"]
 [connection signal="mouse_entered" from="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" to="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" method="_on_ToggleButton_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" to="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" method="_on_ToggleButton_mouse_exited"]
-[connection signal="gui_input" from="HBoxContainer/Body/TopBar/TitleBar" to="HBoxContainer/Sidebar/VBoxContainer/top_container/ToggleButton" method="_on_TitleBar_gui_input"]
 [connection signal="gui_input" from="HBoxContainer/Body/TopBar/TitleBar" to="HBoxContainer/Body/TopBar/TitleBar" method="_on_TitleBar_gui_input"]
+[connection signal="viewSignal" from="HBoxContainer/Body/pages/ManageServers/ServersChannelsPanel/ServersChannelsTree" to="HBoxContainer/Body/pages/ManageServers/ServersChannelsPanelVIEW/ServersChannelsTreeView" method="_on_ServersChannelsTree_viewSignal"]
